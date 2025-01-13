@@ -64,3 +64,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(nextSlide, 5000);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('newsletterModal');
+    const btn = document.getElementById('newsletterBtn');
+    const closeBtn = document.querySelector('.close-modal');
+    const form = document.getElementById('newsletterForm');
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value;
+        
+        alert('Obrigado por se inscrever! Em breve você receberá nossas novidades.');
+        
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        form.reset();
+    }
+});

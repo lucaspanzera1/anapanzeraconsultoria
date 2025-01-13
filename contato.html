@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Panzera - Consultoria & Treinamentos</title>
+    <link rel="stylesheet" href="resources/css/index.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="resources/css/contato.css?v=<?= time() ?>">
+    <link rel='shorcut icon' href="resources/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img src="resources/img/favicon.png" alt="Ana Panzera Logo" class="logo">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Entre em Contato</h1>
+            <p>Estamos prontos para transformar seu negócio</p>
+        </div>
+    </section>
+    
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localização</h3>
+                    <p>Belmiro Braga 1106</p>
+                    <p>Belo Horizonte - MG</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefone</h3>
+                    <p>(31) 99809-3160</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-mail</h3>
+                    <p>anapanzera.consultoria@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="contact-form">
+                    <h2>Envie sua Mensagem</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nome Completo</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">E-mail</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Telefone</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecione o Assunto</option>
+                                <option value="consultoria">Consultoria</option>
+                                <option value="treinamento">Treinamento</option>
+                                <option value="parceria">Parceria</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Mensagem</label>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.4284490112573!2d-43.976484!3d-19.9063421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6972f2f79fcc9%3A0x38eb7f9d9d386961!2sR.%20Belmiro%20Braga%2C%201106%20-%20Alto%20Cai%C3%A7aras%2C%20Belo%20Horizonte%20-%20MG%2C%2030720-520!5e0!3m2!1spt-BR!2sbr!4v1736776619358!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como funciona a consultoria?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nossa consultoria começa com um diagnóstico completo do seu negócio, seguido por um plano de ação personalizado e acompanhamento contínuo para garantir resultados.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Qual o prazo médio dos projetos?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O prazo varia de acordo com a complexidade do projeto, mas geralmente nossos projetos de consultoria duram entre 3 e 6 meses.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vocês atendem em todo o Brasil?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, atuamos em todo o território nacional e também oferecemos consultoria remota para maior praticidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-col">
+                    <img src="/resources/img/logo.png" alt="Logo" class="footer-logo">
+                    <p class="company-desc">Transformamos negócios através de consultoria especializada e treinamentos inovadores para o varejo moderno.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ana-cristina-panzera-7a59ba102/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/anapanzeraconsultoria/" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=553198093160&text&type=phone_number&app_absent=0" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Nossos Serviços</h3>
+                    <ul>
+                        <li><a href="#">Consultoria Estratégica</a></li>
+                        <li><a href="#">Treinamento de Equipe</a></li>
+                        <li><a href="#">Gestão de Varejo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (31) 99809-3160</p>
+                        <p><i class="fas fa-envelope"></i>anapanzera.consultoria@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Belo Horizonte - MG</p>
+                    </div>
+                    <button class="newsletter-btn" id="newsletterBtn">Assinar Newsletter</button>
+                </div>
+            </div>
+            
+            <div id="newsletterModal" class="newsletter-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Assine Nossa Newsletter</h3>
+                    <p>Receba novidades e conteúdos exclusivos sobre o varejo.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ana Panzera Consultoria. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="resources/js/contato.js"></script>
+    <script src="resources/js/index.js"></script>
+    
+</body>
+</html>
