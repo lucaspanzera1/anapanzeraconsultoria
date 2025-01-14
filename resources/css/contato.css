@@ -44,7 +44,28 @@
     background: white;
     border-radius: 5px;
     box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 0;
+    background: var(--primary-color);
+    transition: height 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-card:hover::before {
+    height: 100%;
 }
 
 .contact-card:hover {
