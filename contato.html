@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="resources/css/contato.css?v=<?= time() ?>">
     <link rel='shorcut icon' href="resources/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header class="header">
@@ -36,7 +37,7 @@
     
     <section class="contact-info-section">
         <div class="container">
-            <div class="contact-grid">
+            <div class="contact-grid card wow animate__animated animate__fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
                 <div class="contact-card">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Localização</h3>
@@ -62,7 +63,7 @@
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-form-wrapper">
-                <div class="contact-form">
+                <div class="contact-form card wow animate__animated animate__fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.5s">
                     <h2>Envie sua Mensagem</h2>
                     <form id="contactForm">
                         <div class="form-group">
@@ -116,7 +117,7 @@
     
     <section class="faq-section">
         <div class="container">
-            <h2>Perguntas Frequentes</h2>
+            <h2 class="card wow animate__animated animate__fadeIn" data-wow-duration="0.8s" data-wow-delay="0.5s">Perguntas Frequentes</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -208,12 +209,15 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Ana Panzera Consultoria. Todos os direitos reservados.</p>
-                <p class="by">Desenvolvido por <a href="https://lucaspanzera.vercel.app" target="_blank">Lucas Panzera</a></p>
+                <p class="by card wow animate__animated animate__fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Desenvolvido por <a href="https://lucaspanzera.vercel.app" target="_blank">Lucas Panzera</a></p>
             </div>
         </div>
     </footer>
     <script src="resources/js/contato.js"></script>
     <script src="resources/js/index.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
