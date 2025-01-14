@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="resources/css/index.css?v=<?= time() ?>">
     <link rel='shorcut icon' href="resources/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header class="header">
@@ -39,7 +40,7 @@
             <h2>Nossos Serviços</h2>
             <div class="line"></div>
         </div>
-        <div class="services-grid">
+        <div class="services-grid card wow animate__animated animate__fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
             <div class="service-card">
                 <h3>Consultoria Estratégica</h3>
                 <p>Análise completa do seu negócio com diagnóstico preciso e soluções personalizadas para aumentar a eficiência operacional e maximizar resultados.</p>
@@ -60,7 +61,7 @@
             <div class="instagram-header">
                 <h2>Instagram</h2>
                 <p>Acompanhe nossas últimas atualizações</p>
-                <a href="https://instagram.com/anapanzeraconsultoria" target="_blank" class="instagram-handle">
+                <a href="https://instagram.com/anapanzeraconsultoria" target="_blank" class="instagram-handle card wow animate__animated animate__fadeInLeft" data-wow-duration="0.6s" data-wow-delay="0.5s">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -69,7 +70,7 @@
                     @anapanzeraconsultoria
                 </a>
             </div>
-            <div class="instagram-grid">
+            <div class="instagram-grid card wow animate__animated animate__fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
                 <div class="instagram-post">
                     <a href="https://www.instagram.com/p/DEh0LnJxrQb/?img_index=1" target="_blank">
                         <img src="resources/img/post.instagram.3.jpg" alt="Workshop de Vendas" class="post-image">
@@ -106,7 +107,7 @@
 
     <div class="clients">
         <div class="section-title">
-            <h2>Nossos Clientes</h2>
+            <h2 class="wow animate__animated animate__fadeIn" data-wow-duration="2s">Nossos Clientes</h2>
             <div class="line"></div>
         </div>
     
@@ -257,8 +258,10 @@
         </div>
     </div>
 </footer>
-
-
     <script src="resources/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOW.js Demo</title>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="wow animate__animated animate__fadeInDown" data-wow-delay="0.5s">
+            Bem-vindo ao WOW.js Demo!
+        </h1>
+        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+            Animando elementos ao rolar a página.
+        </p>
+    </header>
+
+    <!-- Seção de Cards -->
+    <section class="cards">
+        <div class="card wow animate__animated animate__zoomIn" data-wow-duration="1.5s">
+            <h2>Card 1</h2>
+            <p>Conteúdo do card 1 com animação ZoomIn.</p>
+        </div>
+        <div class="card wow animate__animated animate__slideInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h2>Card 2</h2>
+            <p>Conteúdo do card 2 com animação SlideInLeft.</p>
+        </div>
+        <div class="card wow animate__animated animate__slideInRight" data-wow-duration="1s" data-wow-delay="1s">
+            <h2>Card 3</h2>
+            <p>Conteúdo do card 3 com animação SlideInRight.</p>
+        </div>
+    </section>
+
+    <!-- Script WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        // Inicializa o WOW.js
+        new WOW().init();
+    </script>
+</body>
+</html>
+<style>
+    /* Estilo básico para a página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+</style>
