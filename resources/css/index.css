@@ -711,8 +711,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: row;
     gap: 1rem;
+    text-align: center;
 }
 
 .footer-bottom p {
@@ -761,4 +762,15 @@ body {
     .footer-bottom-links {
         justify-content: center;
     }
+}
+.by{
+    font-size: 0.8rem;
+}
+.by a{
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.by a:hover{
+    color: #b99efc;
 }
