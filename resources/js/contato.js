@@ -1,10 +1,3 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    this.reset();
-});
-
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const faqItem = question.parentElement;
@@ -36,4 +29,35 @@ document.getElementById('phone').addEventListener('input', function(e) {
     }
     
     e.target.value = formattedValue;
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+
+    const formData = new FormData(this);
+    
+    fetch('https://formsubmit.co/lucassouzapanzera@gmail.com', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Mensagem enviada com sucesso!');
+            this.reset();
+        } else {
+            throw new Error('Erro ao enviar mensagem');
+        }
+    })
+    .catch(error => {
+        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+        console.error('Erro:', error);
+    })
+    .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar Mensagem';
+    });
 });
