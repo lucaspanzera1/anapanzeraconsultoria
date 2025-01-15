@@ -5,6 +5,14 @@
     align-items: center;
     justify-content: center;
 }
+@media (max-width: 768px){
+    .services{
+        height: auto;
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+}
 .btn{
     margin-top: 2rem;
 }
