@@ -1,267 +1,406 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Panzera - Consultoria & Treinamentos</title>
-    <link rel="stylesheet" href="resources/css/index.css?v=<?= time() ?>">
-    <link rel='shorcut icon' href="resources/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="index.html"><img src="resources/img/favicon.png" alt="Ana Panzera Logo" class="logo"></a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+<body class="bg-white text-gray-900 font-sans antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="resources/img/favicon.png" alt="Ana Panzera" class="h-8 w-8">
+                    <span class="ml-2 text-xl font-semibold text-black">Ana Panzera</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-black transition-colors duration-200 text-sm font-medium">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-black transition-colors duration-200 text-sm font-medium">Serviços</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-black transition-colors duration-200 text-sm font-medium">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-black transition-colors duration-200 text-sm font-medium">Contato</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="servicos.html">Nossa solução 360+</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="contato.html">Contato</a>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden py-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#inicio" class="text-gray-700 hover:text-black transition-colors duration-200">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-black transition-colors duration-200">Serviços</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-black transition-colors duration-200">Sobre</a>
+                    <a href="#contato" class="text-gray-700 hover:text-black transition-colors duration-200">Contato</a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Transformando<br>o Varejo</h1>
-            <p>Consultoria estratégica e treinamentos especializados para elevar o desempenho do seu negócio</p>
-            <a href="contato.html" class="btn">Agende uma Consultoria</a>
-        </div>
-    </section>
-
-    <section class="services" id="servicos">
-        <div class="section-title">
-            <h2>Nossos Serviços</h2>
-            <div class="line"></div>
-        </div>
-        <div class="services-grid card wow animate__animated animate__fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-            <div class="service-card">
-                <h3>Consultoria Estratégica</h3>
-                <p>Análise completa do seu negócio com diagnóstico preciso e soluções personalizadas para aumentar a eficiência operacional e maximizar resultados.</p>
-            </div>
-            <div class="service-card">
-                <h3>Treinamento de Equipe</h3>
-                <p>Programas de capacitação desenvolvidos para transformar sua equipe em profissionais de alta performance, com foco em vendas e experiência do cliente.</p>
-            </div>
-            <div class="service-card">
-                <h3>Gestão de Varejo</h3>
-                <p>Implementação de metodologias modernas de gestão, otimização de processos e desenvolvimento de estratégias para crescimento sustentável.</p>
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight">
+                    Transformando
+                    <span class="block text-gray-600">o Varejo</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Consultoria estratégica e treinamentos especializados para elevar o desempenho do seu negócio
+                </p>
+                <a href="#contato" class="inline-flex items-center px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors duration-200 text-lg font-medium">
+                    Agende uma Consultoria
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="instagram-section">
-        <div class="instagram-container">
-            <div class="instagram-header">
-                <h2>Instagram</h2>
-                <p>Acompanhe nossas últimas atualizações</p>
-                <a href="https://instagram.com/anapanzeraconsultoria" target="_blank" class="instagram-handle card wow animate__animated animate__fadeInLeft" data-wow-duration="0.6s" data-wow-delay="0.5s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Nossos Serviços</h2>
+                <div class="w-24 h-1 bg-black mx-auto"></div>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group p-8 bg-gray-50 hover:bg-black transition-all duration-300 cursor-pointer">
+                    <div class="w-16 h-16 bg-black group-hover:bg-white rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-black group-hover:text-white mb-4">Consultoria Estratégica</h3>
+                    <p class="text-gray-600 group-hover:text-gray-300 leading-relaxed">
+                        Análise completa do seu negócio com diagnóstico preciso e soluções personalizadas para aumentar a eficiência operacional e maximizar resultados.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gray-50 hover:bg-black transition-all duration-300 cursor-pointer">
+                    <div class="w-16 h-16 bg-black group-hover:bg-white rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-black group-hover:text-white mb-4">Treinamento de Equipe</h3>
+                    <p class="text-gray-600 group-hover:text-gray-300 leading-relaxed">
+                        Programas de capacitação desenvolvidos para transformar sua equipe em profissionais de alta performance, com foco em vendas e experiência do cliente.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gray-50 hover:bg-black transition-all duration-300 cursor-pointer">
+                    <div class="w-16 h-16 bg-black group-hover:bg-white rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-black group-hover:text-white mb-4">Gestão de Varejo</h3>
+                    <p class="text-gray-600 group-hover:text-gray-300 leading-relaxed">
+                        Implementação de metodologias modernas de gestão, otimização de processos e desenvolvimento de estratégias para crescimento sustentável.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2">+20</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Projetos Realizados</p>
+                </div>
+                <div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2">98%</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Clientes Satisfeitos</p>
+                </div>
+                <div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2">+500</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Profissionais Treinados</p>
+                </div>
+                <div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2">+32</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Anos de Experiência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Nossos Clientes</h2>
+                <div class="w-24 h-1 bg-black mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active bg-white p-8 md:p-12 shadow-lg">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="resources/img/cliente 1.jpg" alt="Adriana Vidal" class="w-20 h-20 rounded-full object-cover">
+                            <div class="flex-1 text-center md:text-left">
+                                <p class="text-xl text-gray-700 mb-6 leading-relaxed italic">
+                                    "A consultoria transformou completamente nossa operação de varejo. Aumentamos nossas vendas em 45% no primeiro trimestre após a implementação das estratégias sugeridas."
+                                </p>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-black">Adriana Vidal</h4>
+                                    <p class="text-gray-600">Founder - Flourish</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide bg-white p-8 md:p-12 shadow-lg hidden">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="resources/img/cliente 2.jpg" alt="Rômulo Panzera" class="w-20 h-20 rounded-full object-cover">
+                            <div class="flex-1 text-center md:text-left">
+                                <p class="text-xl text-gray-700 mb-6 leading-relaxed italic">
+                                    "Os treinamentos oferecidos são práticos e eficientes. Nossa equipe está mais preparada e motivada, refletindo diretamente nos resultados."
+                                </p>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-black">Rômulo Panzera</h4>
+                                    <p class="text-gray-600">Gerente Comercial - Carol Bassi Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide bg-white p-8 md:p-12 shadow-lg hidden">
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <img src="resources/img/cliente 3.jpg" alt="Jana" class="w-20 h-20 rounded-full object-cover">
+                            <div class="flex-1 text-center md:text-left">
+                                <p class="text-xl text-gray-700 mb-6 leading-relaxed italic">
+                                    "A metodologia aplicada nos ajudou a identificar pontos críticos em nossa operação e implementar soluções eficazes."
+                                </p>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-black">Jana</h4>
+                                    <p class="text-gray-600">Posição Fashion</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Controls -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-black"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Instagram</h2>
+                <p class="text-xl text-gray-600 mb-8">Acompanhe nossas últimas atualizações</p>
+                <a href="https://instagram.com/anapanzeraconsultoria" target="_blank" class="inline-flex items-center px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200">
+                    <i class="fab fa-instagram mr-2"></i>
                     @anapanzeraconsultoria
                 </a>
             </div>
-            <div class="instagram-grid card wow animate__animated animate__fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                <div class="instagram-post">
-                    <a href="https://www.instagram.com/p/DEh0LnJxrQb/?img_index=1" target="_blank">
-                        <img src="resources/img/post.instagram.3.jpg" alt="Workshop de Vendas" class="post-image">
-                        <div class="post-overlay">
-                        <h3>2025 o ano da virada no seu varejo.</h3>
-                        <p>Comece AGORA com um atendimento mais humanizado!</p>
-                        <span class="post-date">2 dias atrás</span>
-                     </div>
-                    </a>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden bg-gray-100 aspect-square">
+                    <img src="resources/img/post.instagram.3.jpg" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <h3 class="text-lg font-semibold mb-2">2025 o ano da virada no seu varejo</h3>
+                            <p class="text-sm">Comece AGORA com um atendimento mais humanizado!</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="instagram-post">
-                    <a href="https://www.instagram.com/p/C125LDPO1um/" target="_blank">
-                        <img src="resources/img/post.instagram.2.jpg" alt="Workshop de Vendas" class="post-image">
-                        <div class="post-overlay">
-                        <h3>Influenciar vidas</h3>
-                        <p>#treinamento #gestaodepessoas</p>
-                        <span class="post-date">2 dias atrás</span>
-                     </div>
-                    </a>
+                
+                <div class="group relative overflow-hidden bg-gray-100 aspect-square">
+                    <img src="resources/img/post.instagram.2.jpg" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <h3 class="text-lg font-semibold mb-2">Influenciar vidas</h3>
+                            <p class="text-sm">#treinamento #gestaodepessoas</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="instagram-post">
-                    <a href="https://www.instagram.com/p/Cjg1_NcuLD9/?img_index=1" target="_blank">
-                        <img src="resources/img/post.instagram.1.jpg" alt="Workshop de Vendas" class="post-image">
-                        <div class="post-overlay">
-                        <h3>AP Consultoria</h3>
-                        <p>A.P Consultoria nasce com o desejo de ajudar pessoas e negócios a serem mais eficazes em seus resultados 🙌🏻</p>
-                        <span class="post-date">2 anos atrás</span>
-                     </div>
-                    </a>
+                
+                <div class="group relative overflow-hidden bg-gray-100 aspect-square">
+                    <img src="resources/img/post.instagram.1.jpg" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-6">
+                            <h3 class="text-lg font-semibold mb-2">AP Consultoria</h3>
+                            <p class="text-sm">Ajudando pessoas e negócios a serem mais eficazes</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="clients">
-        <div class="section-title">
-            <h2 class="wow animate__animated animate__fadeIn" data-wow-duration="2s">Nossos Clientes</h2>
-            <div class="line"></div>
-        </div>
-    
-        <div class="clients-container">
-            <div class="testimonials-carousel">
-                <div class="testimonial-slide active">
-                    <div class="client-card">
-                        <img src="resources/img/cliente 1.jpg" alt="Logo Cliente" class="client-logo">
-                        <div class="testimonial-content">
-                            <p>"A consultoria transformou completamente nossa operação de varejo. Aumentamos nossas vendas em 45% no primeiro trimestre após a implementação das estratégias sugeridas."</p>
-                            <div class="client-info">
-                                <h4>Adriana Vidal</h4>
-                                <p>Founder - Flourish</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="client-card">
-                        <img src="resources/img/cliente 2.jpg" alt="Logo Cliente" class="client-logo">
-                        <div class="testimonial-content">
-                            <p>"Os treinamentos oferecidos são práticos e eficientes. Nossa equipe está mais preparada e motivada, refletindo diretamente nos resultados."</p>
-                            <div class="client-info">
-                                <h4>Rômulo Panzera</h4>
-                                <p>Gerente Comercial - Carol Bassi Brand</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="client-card">
-                        <img src="resources/img/cliente 3.jpg" alt="Logo Cliente" class="client-logo">
-                        <div class="testimonial-content">
-                            <p>"A metodologia aplicada nos ajudou a identificar pontos críticos em nossa operação e implementar soluções eficazes."</p>
-                            <div class="client-info">
-                                <h4>Jana</h4>
-                                <p>Posição Fashion</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <div class="carousel-dots"></div>
-            </div>
-        </div>
-    
-        <div class="trusted-by">
-            <h3>Empresas que confiam em nosso trabalho</h3>
-            <div class="client-logos">
-                <img src="resources/img/clientes (1).png" alt="Logo 1" class="trusted-logo">
-                <img src="resources/img/clientes (2).png" alt="Logo 2" class="trusted-logo">
-                <img src="resources/img/clientes (3).png" alt="Logo 3" class="trusted-logo">
-                <img src="resources/img/clientes (4).png" alt="Logo 4" class="trusted-logo">
-                <img src="resources/img/clientes (5).png" alt="Logo 5" class="trusted-logo">
-                <img src="resources/img/clientes (6).png" alt="Logo 1" class="trusted-logo">
-            </div>
-            <div class="client-logos">
-                <img src="resources/img/clientes (7).png" alt="Logo 2" class="trusted-logo">
-                <img src="resources/img/clientes (8).png" alt="Logo 3" class="trusted-logo">
-                <img src="resources/img/clientes (9).png" alt="Logo 4" class="trusted-logo">
-                <img src="resources/img/clientes (10).png" alt="Logo 5" class="trusted-logo">
-                <img src="resources/img/clientes (11).png" alt="Logo 1" class="trusted-logo">
-            </div>
-        </div>
-    </div>
-
-
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h4>+20</h4>
-                <p>Projetos Realizados</p>
-            </div>
-            <div class="stat-item">
-                <h4>98%</h4>
-                <p>Clientes Satisfeitos</p>
-            </div>
-            <div class="stat-item">
-                <h4>+500</h4>
-                <p>Profissionais Treinados</p>
-            </div>
-            <div class="stat-item">
-                <h4>+32</h4>
-                <p>Anos de Experiência</p>
+    <!-- Trusted Companies -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-xl font-semibold text-black mb-12">Empresas que confiam em nosso trabalho</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <img src="resources/img/clientes (1).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="resources/img/clientes (2).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="resources/img/clientes (3).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="resources/img/clientes (4).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="resources/img/clientes (5).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="resources/img/clientes (6).png" alt="Cliente" class="h-12 grayscale hover:grayscale-0 transition-all duration-300">
             </div>
         </div>
     </section>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-main">
-            <div class="footer-col">
-                <img src="/resources/img/logo.png" alt="Logo" class="footer-logo">
-                <p class="company-desc">Transformamos negócios através de consultoria especializada e treinamentos inovadores para o varejo moderno.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ana-cristina-panzera-7a59ba102/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/anapanzeraconsultoria/" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=553198093160&text&type=phone_number&app_absent=0" class="social-link"><i class="fab fa-whatsapp"></i></a>
+    <!-- Footer -->
+    <footer id="contato" class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img src="resources/img/favicon.png" alt="Ana Panzera" class="h-8 w-8">
+                        <span class="ml-2 text-xl font-semibold">Ana Panzera</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Transformamos negócios através de consultoria especializada e treinamentos inovadores para o varejo moderno.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/ana-cristina-panzera-7a59ba102/" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/anapanzeraconsultoria/" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=553198093160" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Serviços</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Consultoria Estratégica</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Treinamento de Equipe</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Gestão de Varejo</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contato</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-3"></i>
+                            (31) 99809-3160
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-3"></i>
+                            anapanzera.consultoria@gmail.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
+                            Belo Horizonte - MG
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-col">
-                <h3>Nossos Serviços</h3>
-                <ul>
-                    <li><a href="#">Consultoria Estratégica</a></li>
-                    <li><a href="#">Treinamento de Equipe</a></li>
-                    <li><a href="#">Gestão de Varejo</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Contato</h3>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> (31) 99809-3160</p>
-                    <p><i class="fas fa-envelope"></i>anapanzera.consultoria@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Belo Horizonte - MG</p>
-                </div>
-                <button class="newsletter-btn" id="newsletterBtn">Assinar Newsletter</button>
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Ana Panzera Consultoria. Todos os direitos reservados.</p>
+                <p class="text-gray-400 text-sm mt-4 md:mt-0">
+                    Desenvolvido por <a href="https://lucaspanzera.vercel.app" target="_blank" class="text-white hover:text-gray-300 transition-colors duration-200">Lucas Panzera</a>
+                </p>
             </div>
         </div>
-        
-        <div id="newsletterModal" class="newsletter-modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h3>Assine Nossa Newsletter</h3>
-                <p>Receba novidades e conteúdos exclusivos sobre o varejo.</p>
-                <form id="newsletterForm">
-                    <input type="email" placeholder="Seu melhor e-mail" required>
-                    <button type="submit" class="btn">Assinar</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Ana Panzera Consultoria. Todos os direitos reservados.</p>
-            <p class="by card wow animate__animated animate__fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Desenvolvido por <a href="https://lucaspanzera.vercel.app" target="_blank">Lucas Panzera</a></p>
-        </div>
-    </div>
-</footer>
-    <script src="resources/js/index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-        new WOW().init();
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Testimonial Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.add('hidden');
+                    slide.classList.remove('active');
+                }
+            });
+            
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-black');
+                } else {
+                    dot.classList.remove('bg-black');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto slide testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
